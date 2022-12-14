@@ -8,13 +8,13 @@ export const withTranslation = WrappedComponent => {
     useEffect(() => {
       const { language } = props;
       if (language) {
-        fetch(`/localization/${language}/${language}-EG.json`)
+        fetch(`/withTranslation/localization/${language}/${language}-EG.json`)
           .then(response => response.json())
           .then(locale => {
             setLocalization(locale);
           })
           .catch(() => {
-            fetch(`/localization/${language}/${language}-EG.json`)
+            fetch(`/withTranslation/localization/${language}/${language}-EG.json`)
               .then(response => response.json())
               .then(locale => {
                 setLocalization(locale);
